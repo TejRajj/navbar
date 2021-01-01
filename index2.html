@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to my \nHouse</h1>
+
+    <p id='demo'>TejasMankar</p>
+    <p id='demo'>Tejas\nMankar</p>
+    <p id='demo'>Tejas\n\nMankar</p>
+    <p id='demo'>Tejas\n\n\n\nMankar</p>
+    <button onclick="myFun()">Try It</button>
+
+    <script>
+        function myFun()
+        {
+            var str = document.getElementById('demo').innerHTML;
+            var rev = str.replace(/\\n|\\r/g,' ');
+            document.getElementById('demo').innerHTML = rev;
+            var welcome = document.getElementsByTagName('h1');
+            var text;
+            for(i=0;i<welcome.length;i++) {
+                text = welcome[i].innerHTML;
+                text = text.replace('House','Office');
+                welcome[i].innerHTML = text;
+            }
+            // document.getElementsByTagName('h1')= welcome;
+
+        }
+            
+    </script>
+</body>
+</html>
